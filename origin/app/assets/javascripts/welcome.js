@@ -9,9 +9,11 @@ $(document).ready(function(){
                 console.log("success ", data);
                 $(".container .response").html("<p>" + status + ": " + data + "</p>");
             };
+        $.support.cors = true;
         $.ajax({
             type: 'GET',
             cache:false,
+            async: false,
             url: 'http://locale.resource.com:3001/text',
             dataType: 'text',
             success: success,
